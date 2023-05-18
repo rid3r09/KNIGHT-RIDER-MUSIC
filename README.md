@@ -14,7 +14,7 @@
 
 
 <h2 align="center">
-    ─「 𝗦𝗔𝗡𝗔 𝗠𝗨𝗦𝗜𝗖 」─
+    ─「 𝗚𝗔𝗬𝗨 𝗠𝗨𝗦𝗜𝗖 」─
 
 ★ 𝙷𝙴𝚁𝙾𝙺𝚄 + 𝚅𝙿𝚂 ★
 </h2>
@@ -23,7 +23,7 @@
   <img src="https://graph.org/file/393869a47cf18601f5839.jpg">
 </p>
 
-**𝙏𝙀𝙎𝙏 𝘽𝙊𝙏 ➣ [𝄟❥𝗦𝗔𝗡𝗔🍷𝗩𝗖🌷𝗕𝗢𝗧❥𝄟⃟🥀](https://t.me/INCRICIBLE_MUSIC_BOT)**
+**𝙏𝙀𝙎𝙏 𝘽𝙊𝙏 ➣ [𝄟❥𝗚𝗔𝗬𝗨🍷𝗩𝗖🌷𝗕𝗢𝗧❥𝄟⃟🥀](https://t.me/INCRICIBLE_MUSIC_BOT)**
 
 
 

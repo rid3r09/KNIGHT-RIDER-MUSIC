@@ -12,7 +12,7 @@ from config import BANNED_USERS, lyrical
 from strings import get_command
 from VipX import (Apple, Resso, SoundCloud, Spotify, Telegram,
                         YouTube, app)
-from VipX.core.call import Vip
+from VipX.core.call import Zedze
 from VipX.utils import seconds_to_min, time_to_seconds
 from VipX.utils.channelplay import get_channeplayCB
 from VipX.utils.database import is_video_allowed
@@ -49,6 +49,21 @@ async def play_commnd(
     url,
     fplay,
 ):
+    if not await is_served_user(message.from_user.id):
+        await message.reply_text(
+            text="ᴇʀʀᴏʀ, ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀ ᴠᴇʀɪғɪᴇᴅ ᴜsᴇʀ.\nᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴠᴇʀɪғʏ ʏᴏᴜʀsᴇʟғ.",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴠᴇʀɪғʏ",
+                            url=f"https://t.me/{app.username}?start=verify",
+                        )
+                    ]
+                ]
+            ),
+        )
+        return
     mystic = await message.reply_text(
         _["play_2"].format(channel) if channel else _["play_1"]
     )
@@ -327,7 +342,7 @@ async def play_commnd(
             return await mystic.delete()
         else:
             try:
-                await Vip.stream_call(url)
+                await Zedze.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(
                     "ᴛʜᴇʀᴇ's ᴀɴ ᴇʀʀᴏʀ ɪɴ ᴛʜᴇ ʙᴏᴛ, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴛᴏ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ ᴀs sᴏᴏɴ ᴀs ᴩᴏssɪʙʟᴇ."
@@ -591,7 +606,7 @@ async def anonymous_check(client, CallbackQuery):
 
 
 @app.on_callback_query(
-    filters.regex("VipPlaylists") & ~BANNED_USERS
+    filters.regex("ZedzePlaylists") & ~BANNED_USERS
 )
 @languageCB
 async def play_playlists_command(client, CallbackQuery, _):
